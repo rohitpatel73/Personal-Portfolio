@@ -31,6 +31,11 @@ const Projects = () => {
       description: "Rest API for an e-commerce web application.",
       github: "https://github.com/rohitpatel73/Rest-Api-E-Commerce"
     },
+    {
+      title: "Advanced Password Generator",
+      description: "Password generator with some dynamic & advanced feature.",
+      github: "https://github.com/rohitpatel73/Advanced-Password-Generator"
+    },
   ];
 
   const displayedProjects = showAll ? projects : projects.slice(0, 6);

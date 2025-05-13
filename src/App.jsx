@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="font-sans text-gray-900">
       <Navbar />
-      <main className="p-0 pt-16 w-full m-0 bg-stone-50">
+      <main className="p-0 pt-16 w-full m-0 bg-gray-300">
         <Hero />
         <About />
         <Education />

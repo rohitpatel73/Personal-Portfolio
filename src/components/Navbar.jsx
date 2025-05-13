@@ -27,12 +27,12 @@ const Navbar = () => {
             />
           </div>
 
-          {/* 📛 Name in the center for mobile */}
-          {/* <h1 className="md:hidden absolute left-1/2 transform -translate-x-1/2 text-lg font-bold text-gray-800">
-            Your Name
-          </h1> */}
+          {/*  Name in the center for mobile */}
+          <h1 className="md:hidden absolute left-1/2 transform -translate-x-1/2 text-xl font-bold text-stone-700">
+            Rohit Patel
+          </h1>
 
-          {/* 🖥️ Desktop Nav Links - centered */}
+          {/*  Desktop Nav Links - centered */}
           <div className="hidden md:flex gap-8 text-xl font-bold text-gray-700 absolute left-1/2 transform -translate-x-1/2">
             {links.map((link, index) => (
               <a
@@ -47,7 +47,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* 🍔 Hamburger menu - right for mobile */}
+          {/*  Hamburger menu - right for mobile */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -59,15 +59,15 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* 📱 Mobile Dropdown Menu */}
+        {/*  Mobile Dropdown Menu */}
         {isOpen && (
-          <div className="md:hidden flex flex-col gap-4 py-4 items-center text-gray-700 font-medium">
+          <div className="md:hidden flex flex-col gap-4 py-4 items-center text-emerald-950 font-medium">
             {links.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
                 download={link.download}
-                className="hover:text-purple-600 transition duration-300"
+                className="hover:text-emerald-700 transition duration-300"
               >
                 {link.label}
               </a>

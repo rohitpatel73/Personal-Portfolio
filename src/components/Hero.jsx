@@ -52,32 +52,22 @@ const Hero = () => {
               ))}
             </span>
           </motion.h1>
-
-          {/* <motion.p
-            className="text-lg text-sky-800 md:text-xl mt-2 h-10"
+          <motion.p
+            className="text-lg text-sky-600 md:text-xl mt-2 h-10 font-semibold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            {roles[index]}
-          </motion.p> */}
-
-<motion.p
-  className="text-lg text-sky-600 md:text-xl mt-2 h-10 font-semibold"
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 1 }}
->
-  <Typewriter
-    words={roles}
-    loop={0} 
-    cursor
-    cursorStyle="|"
-    typeSpeed={70}
-    deleteSpeed={50}
-    delaySpeed={1500}
-  />
-</motion.p>
+            <Typewriter
+              words={roles}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </motion.p>
 
 
           <motion.div
