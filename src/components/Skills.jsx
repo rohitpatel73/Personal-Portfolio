@@ -44,8 +44,8 @@ const skills = [
 const Skills = () => (
   <section className="py-12 px-4 md:px-16 bg-gradient-to-b from-stone-100 to-stone-300" id="skills">
     <div className="max-w-6xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">
-        My <span className="text-purple-600">Skills</span>
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-stone-700 mb-10">
+        My <span className="text-emerald-950">Skills</span>
       </h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
@@ -64,7 +64,7 @@ const Skills = () => (
 
             <div className="relative z-10 flex items-center gap-3 px-4 py-5">
               <span className="text-4xl">{skill.icon}</span>
-              <span className="text-gray-900 text-2xl font-semibold">
+              <span className="text-stone-700 text-2xl font-semibold">
                 {skill.name}
               </span>
             </div>

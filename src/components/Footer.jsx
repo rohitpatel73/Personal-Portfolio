@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa"
 
 const Footer = () => (
-  <footer className="bg-gradient-to-b from-slate-100 to-gray-400 border-t py-6">
+  <footer className="bg-gradient-to-r from-stone-200 to-stone-300 border-t py-6">
     <div className="flex justify-center space-x-6 mb-3">
       <a
         href="https://github.com/rohitpatel73"

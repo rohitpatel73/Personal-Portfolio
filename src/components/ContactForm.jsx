@@ -1,6 +1,6 @@
 import { useRef } from "react"
 import emailjs from "@emailjs/browser"
-import { toast } from "react-hot-toast" // optional: for alerts
+import { toast } from "react-hot-toast" 
 
 const Contact = () => {
   const form = useRef()
@@ -10,10 +10,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_hmck2ma",     // Replace with your EmailJS Service ID
-        "template_6wriigb",    // Replace with your EmailJS Template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        "RG1fSHExrdnxZHvWL" // Replace with your EmailJS Public Key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
@@ -30,8 +30,8 @@ const Contact = () => {
   return (
     <section className="py-16 px-6 md:px-16 bg-gradient-to-b from-stone-100 to-stone-300" id="contact">
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-8">
-          <span className="text-purple-600">Contact</span> Me
+        <h2 className="text-4xl font-bold text-emerald-950 mb-8">
+          <span className="text-stone-700">Contact</span> Me
         </h2>
 
         <form
@@ -63,7 +63,7 @@ const Contact = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-3 rounded-md transition duration-300 shadow-md"
+              className="bg-stone-600 hover:bg-stone-500 text-white font-semibold px-8 py-3 rounded-md transition duration-300 shadow-md"
             >
               Send Message ✉️
             </button>

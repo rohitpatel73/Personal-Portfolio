@@ -2,15 +2,14 @@ import { FaGraduationCap } from 'react-icons/fa'
 
 const Education = () => (
   <section className="py-12 px-6 md:px-16 bg-gradient-to-b from-stone-100 to-stone-300" id="education">
-    <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
-      <FaGraduationCap className="inline-block text-purple-600 mr-2" />
+    <h2 className="text-4xl font-bold text-center text-emerald-900 mb-10">
+      <FaGraduationCap className="inline-block text-stone-500 mr-2" />
       Education
     </h2>
 
 
     
     <div className="space-y-8 max-w-4xl mx-auto">
-      {/* Class 10th */}
       <div className="bg-stone-200 rounded-xl shadow-md p-6 border-l-4 border-stone-600 hover:shadow-lg transition duration-300">
         <h3 className="text-xl font-semibold text-gray-800">Class 10th</h3>
         <div className='flex justify-between'>
@@ -20,7 +19,6 @@ const Education = () => (
         </div>
       </div>
 
-      {/* Class 12th */}
       <div className="bg-stone-200 rounded-xl shadow-md p-6 border-l-4 border-stone-600 hover:shadow-lg transition duration-300">
         <h3 className="text-xl font-semibold text-gray-800">Class 12th</h3>
 
@@ -31,7 +29,6 @@ const Education = () => (
         </div>
       </div>
 
-      {/* B.Tech */}
       <div className="bg-stone-200 rounded-xl shadow-md p-6 border-l-4 border-stone-600 hover:shadow-lg transition duration-300">
         <h3 className="text-xl font-semibold text-gray-800">B.Tech in Computer Science</h3>
 

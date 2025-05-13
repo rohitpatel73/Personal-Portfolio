@@ -3,6 +3,8 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
 import profile from '../assets/profile.jpg'
 import { useEffect, useState } from 'react'
 import './Hero.css' // 👈 for custom wave-animation
+import { Typewriter } from 'react-simple-typewriter';
+
 
 const roles = ["Software Developer", "Frontend Developer", "Full-Stack Developer", "Backend Developer", "Open Source Contributor"]
 const name = "Rohit Patel".split("")
@@ -20,7 +22,8 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full flex items-center justify-center px-6 md:px-20 bg-gradient-to-r from-blue-100 to-purple-200"
+      className="min-h-screen w-full flex items-center justify-center px-6 md:px-20 bg-gradient-to-r from-emerald-50 via-gray-300 to-stone-200 
+      text-slate-600"
     >
       <div className="flex flex-col-reverse md:flex-row items-center justify-between w-full max-w-7xl gap-12">
         {/* 👈 Left Content */}
@@ -32,7 +35,7 @@ const Hero = () => {
             transition={{ delay: 0.5 }}
           >
             Hi, I'm{" "}
-            <span className="text-purple-700 font-extrabold ml-2 flex gap-1">
+            <span className="text-violet-600 text-shadow-2xs text-shadow-gray-800 font-extrabold ml-2 flex gap-1">
               {name.map((char, i) => (
                 <motion.span
                   key={i}
@@ -50,14 +53,32 @@ const Hero = () => {
             </span>
           </motion.h1>
 
-          <motion.p
-            className="text-lg md:text-xl mt-2 h-10"
+          {/* <motion.p
+            className="text-lg text-sky-800 md:text-xl mt-2 h-10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
             {roles[index]}
-          </motion.p>
+          </motion.p> */}
+
+<motion.p
+  className="text-lg text-sky-600 md:text-xl mt-2 h-10 font-semibold"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1 }}
+>
+  <Typewriter
+    words={roles}
+    loop={0} 
+    cursor
+    cursorStyle="|"
+    typeSpeed={70}
+    deleteSpeed={50}
+    delaySpeed={1500}
+  />
+</motion.p>
+
 
           <motion.div
             className="mt-6 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
@@ -68,13 +89,13 @@ const Hero = () => {
             <a
               href="/resume.pdf"
               download
-              className="bg-purple-600 text-white px-5 py-2 rounded-md hover:bg-purple-700 transition"
+              className="bg-stone-600 text-white px-5 py-2 rounded-md hover:bg-stone-500 transition"
             >
               Download Resume
             </a>
             <a
               href="#contact"
-              className="border border-purple-600 text-purple-600 px-5 py-2 rounded-md hover:bg-purple-600 hover:text-white transition"
+              className="border border-stone-500 text-stone-800 px-5 py-2 rounded-md hover:bg-stone-600 hover:text-white transition"
             >
               Contact Me
             </a>
