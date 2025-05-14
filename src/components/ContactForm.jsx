@@ -1,28 +1,44 @@
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import emailjs from "@emailjs/browser"
 import { toast } from "react-hot-toast" 
 
 const Contact = () => {
   const form = useRef()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [userName, setUserName] = useState("") // To store the user's name
 
   const sendEmail = (e) => {
     e.preventDefault()
+    setIsSubmitting(true) // Disable the button when submitting
+
+    const formData = new FormData(form.current)
+    const name = formData.get("user_name") // Extract the user's name
+    const email = formData.get("user_email") // Extract the user's email
+    setUserName(name) // Save the name to display in the popup
+
+    const templateParams = {
+      user_name: name,
+      user_email: email, // Include the email in the parameters
+      message: formData.get("message")
+    }
 
     emailjs
-      .sendForm(
+      .send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        form.current,
+        templateParams,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
         (result) => {
-          toast.success("Message sent successfully!")
+          toast.success(`Message sent to ${name}`) // Pop-up showing the name
           form.current.reset()
+          setIsSubmitting(false) // Enable the button after submitting
         },
         (error) => {
           toast.error("Something went wrong. Please try again.")
           console.error(error)
+          setIsSubmitting(false) // Enable the button in case of an error
         }
       )
   }
@@ -63,9 +79,12 @@ const Contact = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-stone-600 hover:bg-stone-500 text-white font-semibold px-8 py-3 rounded-md transition duration-300 shadow-md"
+              disabled={isSubmitting} // Disable the button during submission
+              className={`${
+                isSubmitting ? 'bg-stone-400 cursor-not-allowed' : 'bg-stone-600 hover:bg-stone-500'
+              } text-white font-semibold px-8 py-3 rounded-md transition duration-300 shadow-md`}
             >
-              Send Message ✉️
+              {isSubmitting ? "Submitting..." : "Send Message ✉️"}
             </button>
           </div>
         </form>
